@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Projet Image Map</title>
+    <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Cousine:ital,wght@0,400;0,700;1,400;1,700&family=Rammetto+One&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+
+:root {
+    --bg-color: #f4f4f4;
+    --hover-effect: brightness(1.2);
+}
+
+body {
+    margin: 0;
+    /*background-color: var(--bg-color);*/
+      font-family: "Google Sans Code", monospace;
+      background-color: antiquewhite;
+
+}
+
+/* HEADER */
+
+.header {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+/* GRID PRINCIPALE */
+
+.image-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* STYLE COMMUN À TOUTES LES IMAGES */
+
+.img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* IMAGES */
+
+.img1 { background-image: url("image1.png"); }
+.img2 { background-image: url("image2.png"); }
+.img3 { background-image: url("image3.png"); }
+.img4 { background-image: url("image4.png"); }
+.img5 { background-image: url("image5.png"); }
+.img6 { background-image: url("image6.png"); }
+.img7 { background-image: url("image7.png"); }
+.img8 { background-image: url("image8.png"); }
+.img9 { background-image: url("image9.png"); }
+
+/* HOVER uniquement sur les liens */
+
+a.img {
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+a.img:hover {
+    filter: var(--hover-effect);
+}
+
+/* FOOTER */
+
+.footer {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+/* RESPONSIVE */
+
+@media (min-width: 900px) {
+    .image-grid {
+        width: 70vw;
+    }
+}
+
+.request input {
+    background: transparent;
+    border: 2px solid #86d4d5;
+border-radius: 10px;
+    color: #86d4d5;
+    padding: 10px 14px;
+    width: 100%;
+    max-width: 400px;
+    font-size: 15px;
+    outline: none;
+ font-family: "Google Sans Code", monospace;
+}
+
+/* Placeholder lisible, pas fantomatique */
+.request input::placeholder {
+    color: #86d4d5;
+ font-family: "Google Sans Code", monospace;
+}
+
+/* Focus simple, pas d'hystérie */
+.request input:focus {
+    border-color: #86d4d5
+;
+}
+
+.request {
+    width: 90%;
+    max-width: 500px;
+    margin: 1rem auto;
+}
+
+.request input {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: clamp(14px, 2vw, 16px);
+}
+
+
+.dialoguearea {
+    width: 100%;
+    max-width: 500px;
+    margin: 1rem auto;
+
+    aspect-ratio: 450 / 142; /* ratio de ton gif */
+    
+    background-image: url("zzz.gif");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+/* Texte affiché par-dessus */
+.dialogue-text {
+    color: rgb(245, 138, 181);
+    font-size: clamp(14px, 2vw, 18px);
+    font-weight: 500;
+    width: 60%;
+}
+
+.bonjour-img {
+    width: 90%;
+    max-width: 442px; /* taille max originale */
+    height: auto;
+    display: block;
+    margin: 0 auto 1rem auto;
+  transition: 0.2s;
+
+}
+
+.bonjour-img:hover {
+  animation: glitchRGB 0.2s infinite;
+  cursor: pointer;
+}
+
+@keyframes glitchRGB {
+  0% {
+    filter: drop-shadow(-2px 0 red)
+            drop-shadow(2px 0 blue);
+  }
+  50% {
+    filter: drop-shadow(2px 0 red)
+            drop-shadow(-2px 0 blue);
+  }
+  100% {
+    filter: drop-shadow(-2px 0 red)
+            drop-shadow(2px 0 blue);
+  }
+}
+
+.rollinghead {
+  cursor: url("NO.png") 0 0, pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+
+<img src="BONJOUR.png" alt="salutations" class="bonjour-img" />
+
+<div class="dialoguearea" id="dialogue">
+    <p class="dialogue-text">Type 1 to get my bio, type 2 to get my links type 3 if you want to fuck yourself</p>
+</div>
+
+       <div class="request"> <input type="text" placeholder="Type your request here..."> </div>
+</header>
+
+
+
+
+
+
+<nav class="image-grid">
+
+    <a href="page1.html" class="img img1"></a>
+    <div class="img img2"></div>
+    <a href="page3.html" class="img img3"></a>
+
+    <div class="img img4"></div>
+    <a href="page5.html" class="img img5"></a>
+    <div class="img img6"></div>
+
+    <a href="page7.html" class="img img7"></a>
+    <div class="img img8"></div>
+    <a href="page9.html" class="img img9"></a>
+
+</nav>
+
+<footer class="footer">
+
+    <img src="3dgifmaker24590.gif" alt="salutations"  height="242" width="242" class="rollinghead"  onclick="scriptdestroy()"  />
+
+<p>made with lots of love by pilito - credits - say hi @ holapilito [at] gmail [dot] com
+
+ </p>
+    <p>© 2026 Mon Projet</p>
+</footer>
+<script src="scriptbot.js"></script>
+<script src="scriptdestroy.js"></script>
+
+</body>
+</html>

@@ -109,21 +109,26 @@ border-radius: 10px;
 }
 
 /* Focus simple, pas d'hystérie */
-.request input:focus {
-    border-color: #86d4d5
-;
-}
-
 .request {
-    width: 90%;
+    width: 100%;
     max-width: 500px;
     margin: 1rem auto;
+    padding: 0 1rem; /* espace sur mobile */
+    box-sizing: border-box;
 }
 
 .request input {
     width: 100%;
-    padding: 12px 16px;
-    font-size: clamp(14px, 2vw, 16px);
+    padding: 14px 16px;
+    font-size: clamp(14px, 4vw, 16px); /* plus flexible sur mobile */
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.request input:focus {
+    border-color: #86d4d5;
+    outline: none;
 }
 
 
@@ -244,5 +249,6 @@ border-radius: 10px;
 
 </body>
 </html>
+
 
 

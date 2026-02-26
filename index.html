@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -108,7 +109,7 @@ border-radius: 10px;
  font-family: "Google Sans Code", monospace;
 }
 
-/* Focus simple, pas d'hystérie */
+
 .request {
     width: 100%;
     max-width: 500px;
@@ -152,12 +153,15 @@ border-radius: 10px;
     box-sizing: border-box;
 }
 
- @keyframes gradientMove {
+@keyframes gradientMove {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
+
+
+/* Texte affiché par-dessus */
 .dialogue-text {
     color: rgb(245, 138, 181);
     font-size: clamp(14px, 2vw, 18px);
@@ -208,10 +212,10 @@ border-radius: 10px;
 <img src="BONJOUR.png" alt="salutations" class="bonjour-img" />
 
 <div class="dialoguearea" id="dialogue">
-    <p class="dialogue-text">Type 1 to get my bio, type 2 to get my links type 3 if you want to fuck yourself</p>
+    <p class="dialogue-text"  id="response" >Type 1 to get my bio, type 2 to get my links type 3 if you want to fuck yourself</p>
 </div>
 
-       <div class="request"> <input type="text" placeholder="Type your request here..."> </div>
+       <div class="request"> <input type="text" placeholder="Type anything"  id="userInput" > </div>
 </header>
 
 
@@ -244,11 +248,43 @@ border-radius: 10px;
  </p>
     <p>© 2026 Mon Projet</p>
 </footer>
+
+<script>
+
+    const input = document.querySelector("#userInput");
+    const output = document.querySelector("#response");
+
+    const rules = [
+      {
+        pattern: /bonjour|salut|hello/i,
+        response: "Bonjour à vous aussi."
+      },
+      {
+        pattern: /comment ça va|la forme/i,
+        response: "Je fonctionne correctement. Merci de vous en inquiéter."
+      },
+      {
+        pattern: /ton nom/i,
+        response: "Je suis une entité JavaScript. Rien de mystique."
+      },
+      {
+        pattern: /.*/,
+        response: "Je n'ai pas encore de réponse pour ça."
+      }
+    ];
+
+    input.addEventListener("input", (e) => {
+      const value = e.target.value.trim();
+      const match = rules.find(rule => rule.pattern.test(value));
+      output.textContent = match.response;
+    });
+
+
+</script>
 <script src="scriptbot.js"></script>
 <script src="scriptdestroy.js"></script>
 
 </body>
 </html>
-
 
 

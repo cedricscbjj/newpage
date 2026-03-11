@@ -303,7 +303,7 @@ a.img:hover {
         <div class="button" onclick="clearText()"></div>
     </div>
 </div>
-
+<br><br><br>
        <div class="request"> <input type="text" placeholder="Type anything"  id="userInput" > </div>
 </header>
 
@@ -330,9 +330,9 @@ a.img:hover {
 
 <footer class="footer">
 
-    <img src="3dgifmaker24590.gif" alt="salutations"  height="242" width="242" class="rollinghead"  onclick="scriptdestroy()"  />
+    <img src="3dgifmaker24590.gif" id="triggerImage" alt="salutations"  height="242" width="242" class="rollinghead"    />
 
-<p>made with lots of love by pilito - credits - say hi @ holapilito [at] gmail [dot] com
+<p id="hola">made with lots of love by pilito - credits - say hi @ holapilito [at] gmail [dot] com
 
  </p>
     <p>© 2026 Mon Projet</p>
@@ -376,9 +376,36 @@ function changeText() {
 function clearText() {
     document.getElementById("tvText").innerText = "";
 }
+
+
+
+
+const img = document.getElementById("triggerImage");
+
+img.addEventListener("click", function() {
+
+    // changer texte
+    //document.getElementById("title").textContent = "Nouveau titre";
+
+    // changer paragraphe
+    document.getElementById("hola").textContent = "Le texte a été modifié";
+
+    // changer image
+    document.querySelector(".img7").style.backgroundImage = "url('dinosaur.png')";
+
+    // changer background
+    document.body.style.backgroundColor = "black";
+    var els = document.getElementById ("hola");
+    els.style.color = "white";
+
+});
+
+
+
 </script>
 <script src="scriptbot.js"></script>
 <script src="scriptdestroy.js"></script>
 
 </body>
 </html>
+

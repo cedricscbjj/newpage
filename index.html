@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -369,8 +371,9 @@ a.img:hover {
     });
 
 function changeText() {
+let date1 = Date();
     document.getElementById("tvText").innerText = 
-    "Signal détecté...\nConnexion établie.\nBienvenue dans le système.";
+    "Il est actuellement" + " " + date1;
 }
 
 function clearText() {
@@ -388,7 +391,7 @@ img.addEventListener("click", function() {
     //document.getElementById("title").textContent = "Nouveau titre";
 
     // changer paragraphe
-    document.getElementById("hola").textContent = "Le texte a été modifié";
+    document.getElementById("hola").textContent = "Dark mode activé";
 
     // changer image
     document.querySelector(".img7").style.backgroundImage = "url('dinosaur.png')";
@@ -408,4 +411,3 @@ img.addEventListener("click", function() {
 
 </body>
 </html>
-
